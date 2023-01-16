@@ -1,0 +1,51 @@
+<div class="container">
+
+    <h1>FORMULARIO DE REGISTRO</h1>
+
+    <div class="tabla">
+
+        <table class="table table-hover ">
+            <thead>
+                <tr class="table-bordered">
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Carrera</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let nom of personas; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <th>{{ nom.nombre }}</th>
+                    <td>{{ nom.apellido }}</td>
+                    <td>{{nom.carrera}}</td>
+                    <td><button class="btn btn-danger px-3 d-block m-auto" (click)="eliminar(i)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="formulario">
+
+        <h2>Formulario de Registro</h2>
+        <div class="mb-3 d-flex">
+            <label  class="form-label mx-2">Nombre:</label>
+            <input [(ngModel)]="nombre" type="text" class="form-control" >
+        </div>
+        <div class="mb-3 d-flex">
+            <label  class="form-label mx-2">Apellido:</label>
+            <input [(ngModel)]="apellido" type="text" class="form-control" >
+        </div>
+        <div class="mb-3 d-flex">
+            <label  class="form-label mx-2">Carrera:</label>
+            <input [(ngModel)]="carrera" type="text" class="form-control" >
+        </div>
+        <div class="mb-3 d-flex">
+            <label  class="form-label mx-2"></label>
+            <button class="btn btn-primary d-block mx-auto px-5" (click)="registrar()">Guardar</button>
+        </div>
+    </div>
+
+</div>
